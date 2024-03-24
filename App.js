@@ -10,8 +10,8 @@ export default function App() {
     <View style={styles.container}>
       <WelcomePage />
       <LoginPage />
-      <Text>Or</Text>
-      {/* <LoginInputPage /> */}
+      <Text style={styles.or}>Or</Text>
+      <LoginInputPage />
       <StatusBar style="auto" />
     </View>
   );
@@ -19,10 +19,18 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     width:'100vh',
+    marginTop:70,
+    color:'black',
   },
+
+  or: {
+    marginVertical:30,
+    fontSize:15,
+  }
+  
 });

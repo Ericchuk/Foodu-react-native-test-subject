@@ -16,9 +16,9 @@ export default function WelcomePage() {
 
 const style = StyleSheet.create({
   welcome: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom:30,
   },
 
   logoText: {
@@ -28,6 +28,6 @@ const style = StyleSheet.create({
     color: "#000",
     textAlign: "center",
     margin: 10,
-    fontFamily: "sans-serif-light"
+    fontFamily: "sans-serif-light",
   }
 });
