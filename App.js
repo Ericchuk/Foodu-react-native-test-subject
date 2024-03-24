@@ -1,17 +1,24 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Modal } from 'react-native';
 import WelcomePage from './components/welcomePage';
 import LoginPage from './components/loginPage';
 import LoginInputPage from './components/loginInputPage';
+import Register from './components/register';
 
 
 export default function App() {
+  const [modalVisible, setModalVisible] = useState(false)
   return (
     <View style={styles.container}>
       <WelcomePage />
       <LoginPage />
       <Text style={styles.or}>Or</Text>
-      <LoginInputPage />
+      <LoginInputPage modalVisible={modalVisible} setModalVisible={setModalVisible} />
+      <Modal visible={modalVisible }  onRequestClose={() => setModalVisible(false)} animationType='slide'
+      presentationStyle='pageSheet'>
+        <Register setModalVisible={setModalVisible} />
+      </Modal>
       <StatusBar style="auto" />
     </View>
   );

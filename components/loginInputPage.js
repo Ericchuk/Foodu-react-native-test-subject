@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image, Text, TextInput, Linking, Button } from "react-native";
 
-export default function LoginInputPage(){
+export default function LoginInputPage({modalVisible, setModalVisible}){
     return(
         <View style={style.container} >
             <View style={style.inputContainer}>
@@ -17,7 +17,7 @@ export default function LoginInputPage(){
             <View>
                 <Text style={style.button} >Login</Text>
             </View>
-            <Text style={style.register}>Don't have An account? <Text style={{color: '#FD1755'}} onPress={() => Linking.openURL('http://facebook.com')}>Register now</Text></Text>
+            <Text style={style.register}>Don't have An account? <Text style={{color: '#FD1755'}} onPress={() => setModalVisible(true) }>Register now</Text></Text>
         </View>
     )
 }
